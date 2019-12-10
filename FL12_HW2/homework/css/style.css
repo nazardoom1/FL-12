@@ -171,12 +171,13 @@ section::before{
 	.tm-team-description-container{
 		max-width:100%;
 	}
-	.tm-team-description-container h2, p{
+	.carousel-item p, .tm-team-description-container p{
 		text-align: center;
 	}
 	.tm-content-box:last-child h2, .tm-team-description-container h2, .padding-medium h2{
 		text-transform: uppercase;
 		font-weight: 300;
+		text-align: center;
 	}
 	
 	p{
@@ -212,5 +213,9 @@ section::before{
 		text-align:right;
 		padding-right: 40px;
 	}
+	li:nth-child(even){
+		text-align: justify;
+	}
+	 
 	
 }
