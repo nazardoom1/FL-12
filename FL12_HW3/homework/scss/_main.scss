@@ -1,0 +1,240 @@
+// Write your styles here
+
+@import 'variables1';
+@mixin buttonstl($color, $background-color) {
+  color: $background-color;
+  background-color: $color;
+  border: none;
+  color: #fff;
+  height: 34px;
+  width: 100px;
+}
+
+$font-families: ("primary": 'Source Sans Pro', 'secondary': 'Hind');
+
+@mixin linkstl($color) {
+  color: $color;
+}
+
+.base-font{
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+body{
+	background-color: $mainBg;
+}
+header {
+
+	p{
+		width: 800px;
+		margin-left: 100px;
+		display: block;
+		z-index: 2;
+		padding-left: 20px;
+	}
+
+	.header-wrap {
+	background-image: url(../img/m-h-day.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border: 2px solid transparent;
+  	padding: 10px;
+  	border-radius: 0 0 500px/200px 0;
+  	z-index: -1;
+  	color: $TextColor;
+
+  	div:last-child{
+		display: flex;
+    	margin-top: 50px;
+		margin-left: 120px;
+		padding-right: 200px;
+
+	}
+	
+	.header_text{
+		white-space: pre;
+		margin-left: 55px;
+		font-family: map-get($font-families, "secondary"), sans-serif;
+	}
+	.header_heading{
+		position: relative;
+		font-size: 90px;
+		line-height: 90px;
+		font-family: map-get($font-families, "primary"), sans-serif;
+		font-weight: bold;
+		z-index: 2;
+		margin-bottom: 25px;
+   		margin-top: 25px;
+	&::after{
+		position: absolute;
+		content: '';
+		background-color: $Highlight;
+		width: 385px;
+		bottom: 10px;
+		height: 70px;
+		left: 20px;
+		z-index: -1;	
+	}
+}
+	.header_button{
+		@include buttonstl($ButtonBG, $background-color: #fff);
+		margin-right: 250px;
+		margin-bottom: 150px;
+}
+	.login{
+		@include linkstl(#fff)
+}
+}
+	
+}
+
+.landing-logo {
+	display: flex;
+	margin-left: 100px;
+	padding-left: 20px;
+	font-family: $sectionfont;
+	img{
+		height: 60px;
+		width: 60px;
+	}
+	p {
+		display: flex;
+		line-height: 80%;
+		font-size: 25px;
+		width: 85px;
+		flex-direction: column;
+		font-weight: bold;
+		height: 60px;
+		
+		margin-top: 10px; 
+		padding-left: 10px;
+		text-align: center;
+		margin-left: 0;
+	}
+	
+	p span {
+		font-weight: 600;
+  		text-align: center;
+  		font-size: 10px;
+} }
+
+.section_text{
+	position: relative;
+	font-size: 45px;
+	@extend .base-font;
+	font-weight: 600;
+	z-index: 2;
+	text-align: center;
+	color: $TextColor;
+	&::after{
+		position: absolute;
+		content: '';
+		background-color: $Highlight;
+		width: 205px;
+		bottom: 7px;
+		height: 50px;
+		left: 950px;
+		z-index: -1;	
+	}
+}
+
+.section_card{
+	display: flex;
+	background-color: $sectioncardBG;
+	width: 800px;
+	margin: auto;
+	border: 15px solid $sectioncardborder;
+	border-radius: 5px;
+	margin-bottom: 15px;
+	.section_card_right_container{
+	color: $white-text;
+	text-align: center;
+	font-family: $sectionfont;
+	.section_card_text{
+		text-align:justify;
+		padding: 20px 70px;	
+		font-size: 14px;
+	}
+	.section_card_heading{
+		font-weight: bold;
+		@extend .base-font;
+	}
+	.section_link{
+		@include linkstl($white-text);
+		@extend .base-font;
+	}
+	.section_card_img{
+	border-radius: 5px;
+	}
+}
+}
+
+.section_banner{
+	position: relative;
+	margin: 0 auto;
+	margin-bottom: -50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 900px;
+	border-radius: 5px;
+	background: linear-gradient(to right, $grad1, $grad2);
+	.section_banner_text_wrap{
+		.section_banner_heading{
+			@extend .base-font;
+			font-size: 24px;
+			font-weight: bold;	
+			padding-left: 100px;
+			position: relative;
+			color: $TextColor;
+			z-index: 2;
+		&::after{
+			position: absolute;
+			content: '';
+			background-color: $Highlight;
+			width: 55px;
+			bottom: 0;
+			height: 30px;
+			left: 195px;
+			z-index: -1;	
+	}
+		}
+	.section_banner_text{
+		font-family: $sectionfont;
+		color: $white-text;
+		padding-left: 100px;
+		font-size: 14px;
+	}
+
+	}
+	.section_banner_button{
+		margin-right: 100px;
+		@include buttonstl($ButtonBG, $background-color: #fff);
+
+	}
+	
+}
+
+footer{
+	z-index: -1;
+	height: 150px;
+	font-family: $sectionfont;
+	.footer-wrap{
+		padding-top: 75px;
+			background-color: $sectioncardBG;
+			color: $white-text;
+			display: flex;
+			align-items: center;
+			.footer_text{
+				margin: auto;
+				width: 280px;
+				font-size: 14px;
+			}
+			.footer-cr{
+				padding-right: 150px;
+
+			}
+		}
+	}
+
